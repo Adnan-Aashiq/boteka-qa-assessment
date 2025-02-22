@@ -7,7 +7,7 @@
     "open-cypress-runner": "npx cypress open --config-file cypress.config.js ",
     "run-all-tests": "npx cypress run --config-file cypress.config.js",
     "clean-reports": "rimraf cypress/reports && rimraf cypress/screenshots",
-    "run-all-tests-clean-reports": "npm run clean-reports && npm run run-all-tests",
+    "run-all-tests-and-create-clean-reports": "npm run clean-reports && npm run run-all-tests",
     "format": "prettier --write \"**/*.{js,jsx,json,ts,tsx}\"",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"

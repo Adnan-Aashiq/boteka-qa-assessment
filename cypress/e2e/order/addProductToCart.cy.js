@@ -4,26 +4,18 @@ import ProductDetailPage from "../../PageObjects/ProductDetailPage";
 const homepage = new HomePage();
 const productdetailpage = new ProductDetailPage();
 
-describe("Login Functionality", { tags: "Regression" }, () => {
-  it("should allow login with valid credentials", () => {
+describe("Add to Cart Functionality", { tags: "Regression" }, () => {
+  it("User should be able to add the prp=oduct to the successfully", () => {
     homepage.visitUrl();
     homepage.clickLoginButtonNavbar();
-    cy.wait(5000);
     homepage.inputUsername();
-    cy.wait(5000);
     homepage.inputPassword();
-    cy.wait(5000);
     homepage.clickLoginButton();
-    cy.wait(5000);
     homepage.verifyLoggedInUsername();
-    cy.wait(5000);
     homepage.clickRandomProduct();
-    cy.wait(5000);
-    productdetailpage.addToCart();
-    cy.wait(5000);
+
+    productdetailpage.clickAddToCart();
     productdetailpage.verifyProductAddedAlertText();
-    cy.wait(5000);
     productdetailpage.acceptAlert();
-    cy.wait(5000);
   });
 });

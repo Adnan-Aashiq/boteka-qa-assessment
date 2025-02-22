@@ -20,18 +20,28 @@ class HomePage {
   }
 
   inputUsername() {
-    return cy.get(this.username).type("adnantestuser", { delay: 1 });
+    return cy
+      .get(this.username)
+      .click()
+      .focused()
+      .type("adnantestuser", { delay: 0 });
   }
 
   inputInvalidUsername() {
-    return cy.get(this.username).type("adnan", { delay: 1 });
+    return cy.get(this.username).click().focused().type("adnan", { delay: 0 });
   }
 
   inputPassword() {
-    return cy.get(this.password).type("test");
+    return cy.get(this.password).click().focused().type("test", { delay: 0 });
   }
 
   clickLoginButton() {
+    // return cy.get(this.loginButton).then(($button) => {
+    //   if ($button.is(":visible")) {
+    //     cy.wrap($button).click();
+    //   }
+    // });
+
     return cy.get(this.loginButton).click();
   }
 
