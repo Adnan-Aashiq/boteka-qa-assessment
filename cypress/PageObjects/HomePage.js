@@ -36,12 +36,6 @@ class HomePage {
   }
 
   clickLoginButton() {
-    // return cy.get(this.loginButton).then(($button) => {
-    //   if ($button.is(":visible")) {
-    //     cy.wrap($button).click();
-    //   }
-    // });
-
     return cy.get(this.loginButton).click();
   }
 

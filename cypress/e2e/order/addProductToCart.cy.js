@@ -5,7 +5,7 @@ const homepage = new HomePage();
 const productdetailpage = new ProductDetailPage();
 
 describe("Add to Cart Functionality", { tags: "Regression" }, () => {
-  it("User should be able to add the prp=oduct to the successfully", () => {
+  it("User should be able to add the product to the cart successfully", () => {
     homepage.visitUrl();
     homepage.clickLoginButtonNavbar();
     homepage.inputUsername();
