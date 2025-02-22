@@ -13,7 +13,6 @@ describe("Add to Cart Functionality", { tags: "Regression" }, () => {
     homepage.clickLoginButton();
     homepage.verifyLoggedInUsername();
     homepage.clickRandomProduct();
-
     productdetailpage.clickAddToCart();
     productdetailpage.verifyProductAddedAlertText();
     productdetailpage.acceptAlert();

@@ -20,19 +20,31 @@ class HomePage {
   }
 
   inputUsername() {
+    const valiusername = Cypress.env("VALID_USER");
+    cy.log(valiusername);
     return cy
       .get(this.username)
       .click()
       .focused()
-      .type("adnantestuser", { delay: 0 });
+      .type(valiusername, { delay: 0 });
   }
 
   inputInvalidUsername() {
-    return cy.get(this.username).click().focused().type("adnan", { delay: 0 });
+    const invalidusername = Cypress.env("INVALID_USER");
+    return cy
+      .get(this.username)
+      .click()
+      .focused()
+      .type(invalidusername, { delay: 0 });
   }
 
   inputPassword() {
-    return cy.get(this.password).click().focused().type("test", { delay: 0 });
+    const passwordkey = Cypress.env("VALID_PASS");
+    return cy
+      .get(this.password)
+      .click()
+      .focused()
+      .type(passwordkey, { delay: 0 });
   }
 
   clickLoginButton() {
@@ -50,8 +62,12 @@ class HomePage {
   }
 
   verifyInvalidUserAlertText() {
-    cy.on("window:alert", (alertText) => {
-      expect(alertText).to.equal("Wrong password.");
+    // Create explicit event binding
+    return new Cypress.Promise((resolve) => {
+      cy.on("window:alert", (alertText) => {
+        expect(alertText).to.equal("Wrong password.");
+        resolve();
+      });
     });
   }
 
