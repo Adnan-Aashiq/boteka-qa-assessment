@@ -21,7 +21,6 @@ class HomePage {
 
   inputUsername() {
     const valiusername = Cypress.env("VALID_USER");
-    cy.log(valiusername);
     return cy
       .get(this.username)
       .click()
